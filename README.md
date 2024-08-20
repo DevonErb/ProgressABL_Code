@@ -2,7 +2,27 @@
 
 This is the README for your extension "abl". After writing up a brief description, we recommend including the following sections.
 
+This is going to be a extension for Progress ABL/4GL OpenEdge ABL https://www.progress.com/openedge/features/abl
+
+
+
 ## Features
+Syntax highlighting (like OpenEdge ABL by Camicas Christophe) 
+  .p .cls .i .v .template(handlebars) 
+Format Document 
+  formatting to try to make all collapes work 
+Intelisense (auto complete variables, fields, methods,) 
+  Database tables from schema files .df file 
+  temp-tables 
+  buffers 
+  classes 
+  procedures 
+Go to Definition (OpenEdge ABL (Progress 4GL) like Ezequiel Gandolfi) 
+  classes procedures included files 
+Snippets (code complete) 
+  Basic find for each ect based off indexes 
+Debugger(like OpenEdge ABL by Riverside Software) 
+  ? not sure if this will work
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
