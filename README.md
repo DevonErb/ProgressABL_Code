@@ -1,10 +1,6 @@
-# abl README
-
-This is the README for your extension "abl". After writing up a brief description, we recommend including the following sections.
+# ProgressABL_Code README
 
 This is going to be a extension for Progress ABL/4GL OpenEdge ABL https://www.progress.com/openedge/features/abl
-
-
 
 ## Features
 Syntax highlighting (like OpenEdge ABL by Camicas Christophe) 
@@ -24,17 +20,9 @@ Snippets (code complete)
 Debugger(like OpenEdge ABL by Riverside Software) 
   ? not sure if this will work
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+VS Code
 
 ## Extension Settings
 
@@ -55,18 +43,8 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 Users appreciate release notes as you update your extension.
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
+### 0.4.2.0
+Nothing yet will be updated
 ---
 
 ## Working with Markdown
