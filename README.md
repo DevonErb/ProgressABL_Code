@@ -6,7 +6,7 @@ This is going to be a extension for Progress ABL/4GL OpenEdge ABL https://www.pr
 
 1. **Syntax Highlighting**
    - **Examples**: OpenEdge ABL by Camicas Christophe
-   - **File Types**: `.p`, `.cls`, `.i`, `.v`, `.template` (Handlebars)
+   - **File Types**: `.p`, `.cls`, `.i`, `.v`, `.w`
 
 2. **Format Document**
    - **Purpose**: Automatically formats the document to improve readability and maintain consistent styling.
@@ -33,6 +33,47 @@ This is going to be a extension for Progress ABL/4GL OpenEdge ABL https://www.pr
 ## Requirements
 
 VS Code
+
+## Setup Instructions
+
+### Step 1: Copy the ABL Folder
+
+To integrate Progress ABL support into VS Code, you need to copy the `abl` folder containing your ABL code and extensions into the appropriate VS Code extensions directory for your operating system.
+
+#### Windows
+
+1. Open File Explorer.
+2. Navigate to `%USERPROFILE%\.vscode\extensions`.
+3. Copy the `abl` folder into this directory.
+
+#### macOS
+
+1. Open Terminal.
+2. Run the command: 
+    ```bash
+    cp -r /path/to/abl ~/.vscode/extensions/
+    ```
+
+#### Linux
+
+1. Open Terminal.
+2. Run the command:
+    ```bash
+    cp -r /path/to/abl ~/.vscode/extensions/
+    ```
+
+### Step 2: Verify Installation
+
+1. Open Visual Studio Code.
+2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window or pressing `Ctrl+Shift+X`.
+3. Search for your Progress ABL extension to ensure it appears in the list and is enabled.
+
+### Step 3: Open and Edit ABL Files
+
+1. Open your ABL files within VS Code.
+2. Use the features provided by the extension, such as syntax highlighting, code snippets, and IntelliSense.
+
+
 
 ## Extension Settings
 
