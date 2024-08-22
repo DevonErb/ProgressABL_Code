@@ -1,21 +1,55 @@
 {
   "name": "abl",
+  "publisher": "DevonTErb",
+  "version": "4.2.0",
   "displayName": "OpenEdge_Progress_ABL",
   "description": "ABL extenstion",
-  "version": "0.0.1",
+  "author": "DevonTErb",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DevonErb/ProgressABL_Code.git"
+  },
   "engines": {
     "vscode": "^1.92.0"
   },
   "categories": [
-    "Other"
+    "Programming Languages"
   ],
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
-    "commands": [{
-      "command": "abl.helloWorld",
-      "title": "Hello World"
-    }]
+    "languages": [
+      {
+        "id": "abl",
+        "aliases": [
+          "OpenEdge ABL",
+          "abl",
+          "Progress",
+          "Progress 4GL"
+        ],
+        "extensions": [
+          ".w",
+          ".v",
+          ".p",
+          ".i",
+          ".cls"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "abl",
+        "scopeName": "source.p",
+        "path": "./syntaxes/abl.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "abl.helloWorld",
+        "title": "Hello World"
+      }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
