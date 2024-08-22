@@ -74,6 +74,7 @@ To integrate Progress ABL support into VS Code, you need to copy the `abl` folde
 2. Use the features provided by the extension, such as syntax highlighting, code snippets, and IntelliSense.
 
 
+![Alt text](pictures/Screenshot from 2024-08-22 11-25-51.png)
 
 ## Extension Settings
 
