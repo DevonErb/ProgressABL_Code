@@ -5,6 +5,7 @@ This is going to be a extension for Progress ABL/4GL OpenEdge ABL https://www.pr
 ## Features
 
 1. **Syntax Highlighting**
+   - **Working**
    - **Examples**: OpenEdge ABL by Camicas Christophe
    - **File Types**: `.p`, `.cls`, `.i`, `.v`, `.w`
 

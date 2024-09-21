@@ -21,7 +21,7 @@ end.
 ** Procedure to test the Person class.
 */
 
-DEFINE VARIABLE myPerson AS HANDLE NO-UNDO.
+DEFINE VARIABLE myPerson AS class NO-UNDO.
 DEFINE VARIABLE cName AS CHARACTER NO-UNDO.
 DEFINE VARIABLE iAge AS INTEGER NO-UNDO.
 
