@@ -1,12 +1,12 @@
 # ProgressABL_Code README
 
-This is going to be a extension for Progress ABL/4GL OpenEdge ABL https://www.progress.com/openedge/features/abl
+This is going to be a extension for Progress ABL/4GL oe-zext ABL https://www.progress.com/oe-zext/features/abl
 
 ## Features
 
 1. **Syntax Highlighting**
    - **Working**
-   - **Examples**: OpenEdge ABL by Camicas Christophe
+   - **Examples**: oe-zext ABL by Camicas Christophe
    - **File Types**: `.p`, `.cls`, `.i`, `.v`, `.w`
 
 2. **Format Document**
@@ -20,20 +20,23 @@ This is going to be a extension for Progress ABL/4GL OpenEdge ABL https://www.pr
    - **Features**: Provides temp-tables, buffers, classes, and procedures
 
 5. **Go to Definition**
-   - **Examples**: OpenEdge ABL (Progress 4GL) by Ezequiel Gandolfi
+   - **Examples**: oe-zext ABL (Progress 4GL) by Ezequiel Gandolfi
    - **Functionality**: Navigate to definitions of classes, procedures, and included files
 
 6. **Snippets**
    - **Purpose**: Provides code completions for basic constructs like `for each`, based on indexes.
 
 7. **Debugger**
-   - **Examples**: OpenEdge ABL by Riverside Software
+   - **Examples**: oe-zext ABL by Riverside Software
    - **Functionality**: Debugging features for code execution (Note: Uncertain if this will work in your setup)
 
 
 ## Requirements
 
 VS Code
+npm
+commonjs
+npm install @oe-zext/types
 
 ## Setup Instructions
 

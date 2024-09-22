@@ -1,4 +1,4 @@
-import { defineConfig } from '@vscode/test-cli';
+const { defineConfig } = require('@vscode/test-cli');
 
 export default defineConfig({
 	files: 'test/**/*.test.js',

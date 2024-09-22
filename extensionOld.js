@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
+// const the module and reference it with the alias vscode in your code below
 //const vscode = require('vscode');
-import vscode from "vscode";
+const vscode = require("vscode");
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
 
@@ -21,7 +21,7 @@ function activate(context) {
 		// The code you place here will be executed every time your command is executed
 
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from OpenEdge_Progress_ABL!');
+		vscode.window.showInformationMessage('Hello World from oe-zext_Progress_ABL!');
 	});
 
 	context.subscriptions.push(disposable);

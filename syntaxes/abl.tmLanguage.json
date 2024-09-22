@@ -1,6 +1,6 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "openedge abl",
+	"name": "oe-zext abl",
 	"patterns": [
 		{
 		  "include": "#procedure-definition"
@@ -178,7 +178,7 @@
 			{
 			  "begin": "(?i)\\b(new|shared|var|vari|varia|variab|variabl|variable|private|protected|public|static|serializable|non-serializable)\\b",
 			  "end": "(?=\\.)",
-			  "comment": "https://documentation.progress.com/output/ua/OpenEdge_latest/index.html#page/dvref%2Fdefine-variable-statement.html%23",
+			  "comment": "https://documentation.progress.com/output/ua/oe-zext_latest/index.html#page/dvref%2Fdefine-variable-statement.html%23",
 			  "name": "meta.define.variable.abl",
 			  "beginCaptures": {
 				"1": {
@@ -208,7 +208,7 @@
 			},
 			{
 			  "match": "(?i)(?<=^|\\s)(input|output|input-output|return)(?=\\s)",
-			  "comment": "https://documentation.progress.com/output/ua/OpenEdge_latest/index.html#page/dvref%2Fdefine-variable-statement.html%23",
+			  "comment": "https://documentation.progress.com/output/ua/oe-zext_latest/index.html#page/dvref%2Fdefine-variable-statement.html%23",
 			  "name": "meta.define.parameter.abl",
 			  "captures": {
 				"1": {
@@ -240,7 +240,7 @@
 			},
 			{
 			  "match": "(?i)\\b(stream)\\b([^\\.]*)",
-			  "comment": "https://documentation.progress.com/output/ua/OpenEdge_latest/index.html#page/dvref%2Fdefine-stream-statement.html%23",
+			  "comment": "https://documentation.progress.com/output/ua/oe-zext_latest/index.html#page/dvref%2Fdefine-stream-statement.html%23",
 			  "name": "meta.define.stream.abl",
 			  "captures": {
 				"1": {
@@ -453,10 +453,10 @@
 			  }
 			}
 		  ],
-		  "comment": "https://documentation.progress.com/output/ua/OpenEdge_latest/index.html#page/dvref%2F%257B-%257D-include-file-reference.html%23"
+		  "comment": "https://documentation.progress.com/output/ua/oe-zext_latest/index.html#page/dvref%2F%257B-%257D-include-file-reference.html%23"
 		},
 		"argument-reference": {
-		  "comment": "https://documentation.progress.com/output/ua/OpenEdge_latest/index.html#page/dvref%2F%257B-%257D-argument-reference.html%23"
+		  "comment": "https://documentation.progress.com/output/ua/oe-zext_latest/index.html#page/dvref%2F%257B-%257D-argument-reference.html%23"
 		},
 		"singlelinecomment": {
 		  "match": "//.*$",
@@ -529,7 +529,7 @@
 		"primitive-type": {
 		  "match": "(?i)(?<=^|\\s)(blob|character|characte|charact|charac|chara|char|clob|com-handle|date|datetime|datetime-tz|decimal|decima|decim|deci|dec|handle|int64|integer|intege|integ|inte|int|logical|logica|logic|logi|log|longchar|longcha|longch|memptr|raw|recid|rowid|widget-handle)(?![=\\w-])",
 		  "name": "storage.type.abl",
-		  "comment": "https://documentation.progress.com/output/ua/OpenEdge_latest/index.html#page/dvref/data-types.html"
+		  "comment": "https://documentation.progress.com/output/ua/oe-zext_latest/index.html#page/dvref/data-types.html"
 		},
 		"numeric": {
 		  "match": "(?<![\\w-])((0(x|X)[0-9a-fA-F]+)|([0-9]+(\\.[0-9]+)?))",

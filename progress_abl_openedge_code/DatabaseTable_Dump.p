@@ -81,4 +81,4 @@ for each dbFile
 
 end.
 
-aJsonTable:writefile(nm-dir-par + ".openedge-AllTables.db." + ldbname("dictdb")).
+aJsonTable:writefile(nm-dir-par + ".oe-zext-AllTables.db." + ldbname("dictdb")).

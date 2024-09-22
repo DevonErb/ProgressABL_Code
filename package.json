@@ -2,10 +2,9 @@
   "name": "abl",
   "publisher": "DevonTErb",
   "version": "4.2.0",
-  "displayName": "OpenEdge_Progress_ABL",
+  "displayName": "oe-zext_Progress_ABL",
   "description": "ABL extenstion",
   "author": "DevonTErb",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/DevonErb/ProgressABL_Code.git"
@@ -17,13 +16,13 @@
     "Programming Languages"
   ],
   "activationEvents": [],
-  "main": "./src/extension.js",
+  "main": "./extension.js",
   "contributes": {
     "languages": [
       {
         "id": "abl",
         "aliases": [
-          "OpenEdge ABL",
+          "oe-zext ABL",
           "abl",
           "Progress",
           "Progress 4GL"
@@ -58,17 +57,17 @@
     "test": "vscode-test"
   },
   "dependencies": {
-    "@openEdge/database": "1.0.2",
-    "@openEdge/source": "1.0.7",
-    "@openEdge/types": "1.0.4"
+    "@oe-zext/database": "1.0.2",
+    "@oe-zext/source": "1.0.7",
+    "@oe-zext/types": "^1.0.4"
   },
   "devDependencies": {
-    "@types/vscode": "^1.92.0",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
-    "eslint": "^8.57.0",
-    "typescript": "^5.4.5",
+    "@types/vscode": "^1.92.0",
     "@vscode/test-cli": "^0.0.9",
-    "@vscode/test-electron": "^2.4.0"
+    "@vscode/test-electron": "^2.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.5"
   }
 }
