@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import { AblType, AblTypeCheck } from "@oe-zext/types"
+import { AblType, AblTypeCheck } from "@openEdge/types"
 import { CodeCompletionBase } from "./code-base"
 
 export class TempTable extends CodeCompletionBase {

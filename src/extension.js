@@ -1,91 +1,119 @@
-import * as vscode from "vscode"
-import { AblDatabase } from "@oe-zext/database"
-import { Provider } from "./provider"
+//imports vscode because we are in the src directory
+import * as vscode from "vscode";
+// package.json package-lock.json
+import { AblDatabase } from "@openEdge/database";
+import { AblSource } from "@openEdge/source";
+import { AblSchema } from "@openEdge/types";
+// provider/index.js index-provider.js
+import { Provider } from "./provider";
+// notification.js
 import {
   hideStatusBar,
   initDiagnostic,
   updateStatusBar,
-  initStatusBar
-} from "./notification"
-import { ExtensionConfig } from "./extension-config"
-import { AblExecute } from "./abl-execute"
-import { AblSource } from "@oe-zext/source"
-import { AblSchema } from "@oe-zext/types"
+  initStatusBar,
+} from "./notification";
+//extension-config.js
+import { ExtensionConfig } from "./extension-config";
+// abl-execute/index.js
+import { AblExecute } from "./abl-execute";
 
-const DBF_PATTERN = "**/.openedge-zext.db.*"
-const DBF_DBNAME_REGEX = /\.openedge-zext\.db\.(\w+)$/i
-
+/**
+ * This activates the extension
+ */
 export function activate(context) {
-  new ExtensionConfig(context)
+  //extension configuration
+  new ExtensionConfig(context);
 
-  initControllers(context)
+  //Setup Database tables
+  initAblDatabaseController(context);
 
-  initOnSaveWatcher(context)
-  initOnCloseWatcher(context)
-  initOnChangeActiveTextWatcher(context)
+  //These three are for checking syntax
+  initOnSaveWatcher(context);
+  initOnCloseWatcher(context);
+  initOnChangeActiveTextWatcher(context);
 
-  attachExtensions(context)
-  initDiagnostic(context)
-  initStatusBar(context)
+  //this
+  attachExtensions(context);
+
+  //from src/notification.js
+  initDiagnostic(context);
+  initStatusBar(context);
 }
 
 function deactivate() {}
 
-function initControllers(context) {
+/**
+ * This function sets up the abl database controller
+ * with the database file dumped from:
+ * progress_abl_openedge_code/DatabaseTable_Dump.p
+ */
+function initAblDatabaseController(context) {
+  const DBF_PATTERN = "**/.openedge-AllTables.db.*";
+  const DBF_DBNAME_REGEX = /\.openedge-AllTables\.db\.(\w+)$/i;
+
   context.subscriptions.push(
     AblDatabase.Controller.attach(DBF_PATTERN, DBF_DBNAME_REGEX)
-  )
-  context.subscriptions.push(AblSource.Controller.attach(context))
+  );
+
+  context.subscriptions.push(AblSource.Controller.attach(context));
 }
 
 function initOnSaveWatcher(context) {
   // TODO -------------------------------------------------------
 
-  vscode.workspace.onDidSaveTextDocument(document =>
+  vscode.workspace.onDidSaveTextDocument((document) =>
     hideStatusBar(document.uri.fsPath)
-  )
+  );
 
-  let ablConfig = vscode.workspace.getConfiguration(AblSchema.languageId)
+  let ablConfig = vscode.workspace.getConfiguration(AblSchema.languageId);
   if (ablConfig.get("checkSyntaxOnSave") === "file") {
     vscode.workspace.onDidSaveTextDocument(
-      document => {
+      (document) => {
         if (document.languageId !== AblSchema.languageId) {
-          return
+          return;
         }
-        AblExecute.CheckSyntax.getInstance().execute(document)
+        AblExecute.CheckSyntax.getInstance().execute(document);
       },
       null,
       context.subscriptions
-    )
+    );
   }
 }
 
 function initOnCloseWatcher(context) {
   // TODO -------------------------------------------------------
 
-  vscode.workspace.onDidCloseTextDocument(document =>
+  vscode.workspace.onDidCloseTextDocument((document) =>
     hideStatusBar(document.uri.fsPath)
-  )
+  );
 }
 
 function initOnChangeActiveTextWatcher(context) {
   // TODO -------------------------------------------------------
 
-  vscode.window.onDidChangeActiveTextEditor(editor => updateStatusBar())
+  vscode.window.onDidChangeActiveTextEditor((editor) => updateStatusBar());
 }
 
 function attachExtensions(context) {
-  Provider.AblCommand.attach(context)
-  Provider.CodeCompletion.attach(context)
-  Provider.Definition.attach(context)
-  Provider.Format.attach(context)
-  Provider.Hover.attach(context)
-  Provider.KeyBinding.attach(context)
-  Provider.Symbol.attach(context)
-  Provider.Signature.attach(context)
-  Provider.Integration.attach(context)
-
-  // TODO -------------------------------------------------------
-
-  Provider.Terminal.attach(context)
+  //provider/abl-command.js
+  Provider.AblCommand.attach(context);
+  //provider/code-completion.js
+  Provider.CodeCompletion.attach(context);
+  //provider/definition.js
+  Provider.Definition.attach(context);
+  //provider/format.js
+  Provider.Format.attach(context);
+  //provider/hover.js
+  Provider.Hover.attach(context);
+  //provider/key-binding.js
+  Provider.KeyBinding.attach(context);
+  //provider/symbol.js
+  Provider.Symbol.attach(context);
+  //provider/signature.js
+  Provider.Signature.attach(context);
+  //provider/integration.js
+  Provider.Integration.attach(context);
+  //provider/terminal.js
+  Provider.Terminal.attach(context);
 }

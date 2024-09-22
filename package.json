@@ -5,6 +5,7 @@
   "displayName": "OpenEdge_Progress_ABL",
   "description": "ABL extenstion",
   "author": "DevonTErb",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/DevonErb/ProgressABL_Code.git"
@@ -16,7 +17,7 @@
     "Programming Languages"
   ],
   "activationEvents": [],
-  "main": "./extension.js",
+  "main": "./src/extension.js",
   "contributes": {
     "languages": [
       {
@@ -55,6 +56,11 @@
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "vscode-test"
+  },
+  "dependencies": {
+    "@openEdge/database": "1.0.2",
+    "@openEdge/source": "1.0.7",
+    "@openEdge/types": "1.0.4"
   },
   "devDependencies": {
     "@types/vscode": "^1.92.0",

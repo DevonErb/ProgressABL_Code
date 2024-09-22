@@ -1,9 +1,9 @@
 import * as vscode from "vscode"
-import { AblType, AblTypeCheck } from "@oe-zext/types"
+import { AblType, AblTypeCheck } from "@openEdge/types"
 import { CodeCompletionBase } from "./code-base"
 import { Table } from "./table"
 import { TempTable } from "./temp-table"
-import { AblDatabase } from "@oe-zext/database"
+import { AblDatabase } from "@openEdge/database"
 
 export class Buffer extends CodeCompletionBase {
   getCompletionItems(document, words, textDocument, position) {

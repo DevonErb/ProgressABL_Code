@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
-import { AblSource } from "@oe-zext/source"
-import { AblSchema } from "@oe-zext/types"
+import { AblSource } from "@openEdge/source"
+import { AblSchema } from "@openEdge/types"
 
 export class Symbol {
   static attach(context) {

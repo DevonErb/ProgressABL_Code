@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 import { CompletionProvider } from "../completion"
-import { AblSchema } from "@oe-zext/types"
+import { AblSchema } from "@openEdge/types"
 
 export class CodeCompletion {
   static attach(context) {

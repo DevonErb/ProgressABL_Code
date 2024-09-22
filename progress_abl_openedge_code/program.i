@@ -31,3 +31,5 @@ PROCEDURE DisplayPeople:
     IF iCount = 0 THEN
         MESSAGE "No records found." VIEW-AS ALERT-BOX.
 END PROCEDURE.
+
+run AddPerson(input 1 , input 3).

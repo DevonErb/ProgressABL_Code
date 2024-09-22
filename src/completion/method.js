@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import { AblType } from "@oe-zext/types"
+import { AblType } from "@openEdge/types"
 import { CodeCompletionBase } from "./code-base"
 
 export class Method extends CodeCompletionBase {

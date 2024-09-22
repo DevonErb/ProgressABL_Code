@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 import { StatementUtil } from "../statement-util"
-import { AblDatabase } from "@oe-zext/database"
+import { AblDatabase } from "@openEdge/database"
 
 export class Table {
   constructor() {

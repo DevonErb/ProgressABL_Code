@@ -2,7 +2,7 @@ import * as vscode from "vscode"
 import * as fs from "fs"
 import * as path from "path"
 import { ExtensionConfig } from "../extension-config"
-import { AblSource } from "@oe-zext/source"
+import { AblSource } from "@openEdge/source"
 
 export class Format {
   static attach(context) {

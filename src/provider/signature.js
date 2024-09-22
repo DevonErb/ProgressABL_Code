@@ -1,7 +1,7 @@
 import * as vscode from "vscode"
 import { StatementUtil } from "../statement-util"
-import { AblType, AblSchema } from "@oe-zext/types"
-import { AblSource } from "@oe-zext/source"
+import { AblType, AblSchema } from "@openEdge/types"
+import { AblSource } from "@openEdge/source"
 
 export class Signature {
   static attach(context) {

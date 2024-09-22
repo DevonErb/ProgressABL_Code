@@ -2,27 +2,29 @@ import * as vscode from "vscode"
 import * as fs from "fs"
 import { isNullOrUndefined, promisify } from "util"
 
-const readFileAsync = promisify(fs.readFile)
+const readFileAsync = promisify(fs.readFile);
 
-let _extensionConfig
+let _extensionConfig;
 
 export class ExtensionConfig {
-  OPENEDGE_CONFIG_FILENAME = ".openedge-zext.json"
-  THIS_EXTENSION = "ezequielgandolfi.openedge-zext"
+  //This is the config file for the extension
+  OPENEDGE_CONFIG_FILENAME = ".openedge-config.json";
+  //name of extension
+  THIS_EXTENSION = "ProgressABL_Code";
 
-  _openEdgeConfig = null
-  _watcher = null
-  _genericWorkspaceFolder = null
+  _openEdgeConfig = null;
+  _watcher = null;
+  _genericWorkspaceFolder = null;
 
   constructor(context) {
-    _extensionConfig = this
-    this._context = context
-    this.initConfig()
-    this.initWatcher()
+    _extensionConfig = this;
+    this._context = context;
+    this.initConfig();
+    this.initWatcher();
   }
 
   static getInstance() {
-    return _extensionConfig
+    return _extensionConfig;
   }
 
   findConfigFile() {
@@ -30,30 +32,30 @@ export class ExtensionConfig {
       .findFiles(this.OPENEDGE_CONFIG_FILENAME)
       .then(uris => {
         if (uris.length > 0) {
-          return uris[0]
+          return uris[0];
         }
-        return null
-      })
+        return null;
+      });
   }
 
   loadAndSetConfigFile(uri) {
     if (isNullOrUndefined(uri)) {
-      return
+      return;
     }
     this.loadFile(uri.fsPath).then(config => {
-      this._openEdgeConfig = config
+      this._openEdgeConfig = config;
       if (!this._genericWorkspaceFolder)
-        this._genericWorkspaceFolder = vscode.workspace.getWorkspaceFolder(uri)
+        this._genericWorkspaceFolder = vscode.workspace.getWorkspaceFolder(uri);
     })
   }
 
   initWatcher() {
     this._watcher = vscode.workspace.createFileSystemWatcher(
-      "**/" + this.OPENEDGE_CONFIG_FILENAME
+      "**/" + this.OPENEDGE_CONFIG_FILENAME;
     )
-    this._watcher.onDidChange(uri => this.loadAndSetConfigFile(uri))
-    this._watcher.onDidCreate(uri => this.loadAndSetConfigFile(uri))
-    this._watcher.onDidDelete(uri => this.loadAndSetConfigFile(uri))
+    this._watcher.onDidChange(uri => this.loadAndSetConfigFile(uri));
+    this._watcher.onDidCreate(uri => this.loadAndSetConfigFile(uri));
+    this._watcher.onDidDelete(uri => this.loadAndSetConfigFile(uri));
   }
 
   initConfig() {

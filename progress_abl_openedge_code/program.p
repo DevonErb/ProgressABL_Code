@@ -41,3 +41,16 @@ myPerson:DISPLAYPERSON().
 
 /* Clean up */
 DELETE OBJECT myPerson.
+
+procedure thisThing:
+
+    // just testing a go to definition
+end procedure.
+
+temp-table tcustomer where 
+    field id as int 
+    field custnumber as char 
+    field company as char
+    . 
+
+run thisThing.

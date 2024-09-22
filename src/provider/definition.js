@@ -1,7 +1,7 @@
 import * as vscode from "vscode"
 import { StatementUtil } from "../statement-util"
-import { AblType, AblTypeCheck, AblSchema } from "@oe-zext/types"
-import { AblSource } from "@oe-zext/source"
+import { AblType, AblTypeCheck, AblSchema } from "@openEdge/types"
+import { AblSource } from "@openEdge/source"
 
 export class Definition {
   static attach(context) {

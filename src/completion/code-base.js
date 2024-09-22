@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 import { StatementUtil } from "../statement-util"
-import { AblSource } from "@oe-zext/source"
+import { AblSource } from "@openEdge/source"
 
 export class CodeCompletionBase {
   documentController = AblSource.Controller.getInstance()

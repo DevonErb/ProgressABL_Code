@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import { AblSource } from "@oe-zext/source"
+import { AblSource } from "@openEdge/source"
 
 export class KeyBinding {
   static attach(context) {
