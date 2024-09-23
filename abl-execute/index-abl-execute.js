@@ -1,12 +1,15 @@
-const { checksyntax } = require('./check-syntax');
-module.exports = { checksyntax };
-const { compile } = require('./compile');
-module.exports = { compile };
-const { dictionarydump } = require('./dictionary-dump');
-module.exports = { dictionarydump };
-const { model } = require('./model');
-module.exports = { model };
-const { process } = require('./process');
-module.exports = { process };
-const { run } = require('./run');
-module.exports = { run };
+const checksyntax = require('./check-syntax');
+const compile = require('./compile');
+const dictionarydump = require('./dictionary-dump');
+const model = require('./model');
+const process = require('./process');
+const run = require('./run');
+
+module.exports = {
+  checksyntax,
+  compile,
+  dictionarydump,
+  model,
+  process,
+  run
+};

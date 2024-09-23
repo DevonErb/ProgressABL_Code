@@ -1,20 +1,23 @@
-const { ablcommand } = require('./abl-command');
-module.exports = { ablcommand };
-const { definition } = require('./definition');
-module.exports = { definition };
-const { codecompletion } = require('./code-completion');
-module.exports = { codecompletion };
-const { format } = require('./format');
-module.exports = { format };
-const { hover } = require('./hover');
-module.exports = { hover };
-const { integration } = require('./integration');
-module.exports = { integration };
-const { keybinding } = require('./key-binding');
-module.exports = { keybinding };
-const { signature } = require('./signature');
-module.exports = { signature };
-const { symbol } = require('./symbol');
-module.exports = { symbol };
-const { terminal } = require('./terminal');
-module.exports = { terminal };
+const AblCommand = require("./abl-command");
+const Definition = require("./definition");
+const CodeCompletion = require("./code-completion");
+const Format = require("./format");
+const Hover = require("./hover");
+const Integration = require("./integration");
+const Keybinding = require("./key-binding");
+const Signature = require("./signature");
+const Symbol = require("./symbol");
+const Terminal = require("./terminal");
+
+module.exports = {
+  AblCommand,
+  Definition,
+  CodeCompletion,
+  Format,
+  Hover,
+  Integration,
+  Keybinding,
+  Signature,
+  Symbol,
+  Terminal,
+};

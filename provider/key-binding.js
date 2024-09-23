@@ -1,10 +1,10 @@
-const vscode = require('vscode');
-const { AblSource } = require('@oe-zext/source');
+const vscode = require("vscode");
+const { AblSource } = require("@oe-zext/source");
 
-export class KeyBinding {
+class KeyBinding {
   static attach(context) {
-    let instance = new KeyBinding()
-    instance.registerCommands(context)
+    let instance = new KeyBinding();
+    instance.registerCommands(context);
   }
 
   registerCommands(context) {
@@ -13,27 +13,31 @@ export class KeyBinding {
         "abl.editor.gotoMethodStart",
         this.editor_gotoMethodStart.bind(this)
       )
-    )
+    );
   }
 
   editor_gotoMethodStart() {
-    let textDocument = vscode.window.activeTextEditor
+    let textDocument = vscode.window.activeTextEditor;
     if (textDocument?.selection?.active) {
       let document = AblSource.Controller.getInstance().getDocument(
         textDocument?.document
-      )
-      let position = textDocument.selection.active
-      let method = document?.methods.find(item => item.range.contains(position))
+      );
+      let position = textDocument.selection.active;
+      let method = document?.methods.find((item) =>
+        item.range.contains(position)
+      );
       if (method) {
         textDocument.revealRange(
           method.range,
           vscode.TextEditorRevealType.InCenterIfOutsideViewport
-        )
+        );
         textDocument.selection = new vscode.Selection(
           method.range.start,
           method.range.start
-        )
+        );
       }
     }
   }
 }
+
+module.exports = KeyBinding;

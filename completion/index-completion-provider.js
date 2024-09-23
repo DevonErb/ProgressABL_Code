@@ -1,14 +1,15 @@
-const { buffer } = require('./buffer');
-module.exports = { buffer };
-const { method } = require('./method');
-module.exports = { method };
-const { temptable } = require('./temp-table');
-module.exports = { temptable };
-const { variable } = require('./variable');
-module.exports = { variable };
+const buffer = require('./buffer');
+const method = require('./method');
+const temptable = require('./temp-table');
+const variable = require('./variable');
+const table = require('./table');
+const file = require('./file');
 
-const { table } = require('./table');
-module.exports = { table };
-
-const { file } = require('./file');
-module.exports = { file };
+module.exports = {
+  buffer,
+  method,
+  temptable,
+  variable,
+  table,
+  file
+};

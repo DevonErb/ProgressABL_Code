@@ -2,7 +2,7 @@ const { path } = require('path');
 const { fs } = require('fs');
 const { ExtensionConfig } = require('../extension-config');
 
-export class AblEnvironment {
+ class AblEnvironment {
   static getInstance() {
     return new AblEnvironment();
   }
@@ -34,10 +34,10 @@ export class AblEnvironment {
     return prowin;
   }
 
-  createProArgs(options) {
+  static createProArgs(options) {
     let pfArgs = [];
     if (options.parameterFiles) {
-      // pfArgs = oe-zextConfig.parameterFiles.filter(pf => pf.trim().length > 0).map(pf => { return '-pf ' + pf; });
+      // pfArgs = oe_zextConfig.parameterFiles.filter(pf => pf.trim().length > 0).map(pf => { return '-pf ' + pf; });
       pfArgs = options.parameterFiles
         .filter((pf) => pf.trim().length > 0)
         .reduce((r, a) => r.concat("-pf", a), []);
@@ -73,29 +73,29 @@ export class AblEnvironment {
     return args;
   }
 
-  setupEnvironmentVariables(env, oe-zextConfig, workspaceRoot) {
-    if (oe-zextConfig) {
+  static setupEnvironmentVariables(env, oe_zextConfig, workspaceRoot) {
+    if (oe_zextConfig) {
       if (
-        !oe-zextConfig.proPath ||
-        !(oe-zextConfig.proPath instanceof Array) ||
-        oe-zextConfig.proPath.length === 0
+        !oe_zextConfig.proPath ||
+        !(oe_zextConfig.proPath instanceof Array) ||
+        oe_zextConfig.proPath.length === 0
       ) {
-        oe-zextConfig.proPath = ["${workspaceRoot}"];
+        oe_zextConfig.proPath = ["${workspaceRoot}"];
       }
-      oe-zextConfig.proPath.push(
+      oe_zextConfig.proPath.push(
         path.join(ExtensionConfig.getInstance().getExtensionPath(), "abl-src")
       );
-      let paths = oe-zextConfig.proPath.map((p) => {
+      let paths = oe_zextConfig.proPath.map((p) => {
         p = p.replace("${workspaceRoot}", workspaceRoot);
         p = p.replace("${workspaceFolder}", workspaceRoot);
         p = path.posix.normalize(p);
         return p;
       });
-      // let paths = oe-zextConfig.proPath || [];
+      // let paths = oe_zextConfig.proPath || [];
       env.VSABL_PROPATH = paths.join(",");
 
-      if (oe-zextConfig.proPathMode) {
-        env.VSABL_PROPATH_MODE = oe-zextConfig.proPathMode;
+      if (oe_zextConfig.proPathMode) {
+        env.VSABL_PROPATH_MODE = oe_zextConfig.proPathMode;
       } else {
         env.VSABL_PROPATH_MODE = "append";
       }
@@ -108,7 +108,7 @@ export class AblEnvironment {
     return env;
   }
 
-  expandPathVariables(path, env, variables) {
+  static expandPathVariables(path, env, variables) {
     // format VSCode ${env:VAR}
     // path = path.replace(/\${env:([^}]+)}/g, (_, n) => {
     //     return env[n];
@@ -126,3 +126,5 @@ export class AblEnvironment {
     return path;
   }
 }
+
+module.exports = AblEnvironment;

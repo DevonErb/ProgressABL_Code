@@ -1,5 +1,6 @@
 const { defineConfig } = require('@vscode/test-cli');
 
-export default defineConfig({
+default defineConfig({
 	files: 'test/**/*.test.js',
 });
+module.exports = defineConfig;

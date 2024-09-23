@@ -7,11 +7,11 @@ const {
   STATUS_COLOR,
   errorDiagnosticCollection,
   warningDiagnosticCollection,
-} = require('../notification');;
+} = require("../notification");
 
-const { BaseExecutor } = require('./base-executor');
+const { BaseExecutor } = require("./base-executor");
 
-export class CheckSyntax extends BaseExecutor {
+class CheckSyntax extends BaseExecutor {
   constructor() {
     super();
     this.errorDiagnostic = errorDiagnosticCollection;
@@ -47,3 +47,5 @@ export class CheckSyntax extends BaseExecutor {
     });
   }
 }
+
+module.exports = CheckSyntax;

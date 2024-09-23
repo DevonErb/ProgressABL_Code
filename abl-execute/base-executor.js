@@ -26,7 +26,7 @@ const { notification_1 } = require('../notification');
 //var environment_1 = require("./environment");
 const { environment_1 } = require('./environment');
 //var extension_config_1 = require("../extension-config");
-const { extension_config_1 } = require('../extension_config_1');
+const { extension_config_1 } = require('../extension-config');
 //var types_1 = require("@oe-zext/types");
 const { types_1 } = require('@oe-zext/types');
 

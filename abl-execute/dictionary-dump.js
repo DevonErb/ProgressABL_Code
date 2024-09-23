@@ -1,8 +1,8 @@
-const { vscode } = require('vscode');
-const { ExtensionConfig } = require('../extension-config');
-const { BaseExecutor } = require('./base-executor');
+const { vscode } = require("vscode");
+const { ExtensionConfig } = require("../extension-config");
+const { BaseExecutor } = require("./base-executor");
 
-export class DictionaryDump extends BaseExecutor {
+class DictionaryDump extends BaseExecutor {
   static getInstance() {
     return new DictionaryDump();
   }
@@ -18,3 +18,5 @@ export class DictionaryDump extends BaseExecutor {
     });
   }
 }
+
+module.exports = DictionaryDump;

@@ -1,11 +1,11 @@
-const vscode = require('vscode');
-const { AblSource } = require('@oe-zext/source');
-const { AblSchema } = require('@oe-zext/types');
+const vscode = require("vscode");
+const { AblSource } = require("@oe-zext/source");
+const { AblSchema } = require("@oe-zext/types");
 
-export class Symbol {
+class Symbol {
   static attach(context) {
-    let instance = new Symbol()
-    instance.registerCommands(context)
+    let instance = new Symbol();
+    instance.registerCommands(context);
   }
 
   registerCommands(context) {
@@ -14,25 +14,25 @@ export class Symbol {
         AblSchema.languageId,
         this
       )
-    )
+    );
   }
 
   provideDocumentSymbols(document, token) {
-    let doc = AblSource.Controller.getInstance().getDocument(document)
+    let doc = AblSource.Controller.getInstance().getDocument(document);
     if (doc) {
-      return new Promise(resolve => {
-        let documentSymbols = this.documentSymbols.bind(this)
-        if (!token.isCancellationRequested) resolve(documentSymbols(doc))
-        resolve(null)
-      })
+      return new Promise((resolve) => {
+        let documentSymbols = this.documentSymbols.bind(this);
+        if (!token.isCancellationRequested) resolve(documentSymbols(doc));
+        resolve(null);
+      });
     }
-    return
+    return;
   }
 
   documentSymbols(document) {
-    let symbols = []
+    let symbols = [];
     // methods / params / local variables
-    document.methods.forEach(method => {
+    document.methods.forEach((method) => {
       symbols.push(
         new vscode.SymbolInformation(
           method.name,
@@ -40,9 +40,9 @@ export class Symbol {
           "Methods",
           new vscode.Location(document.document.uri, method.range)
         )
-      )
+      );
       // parameters
-      method.params?.forEach(param => {
+      method.params?.forEach((param) => {
         symbols.push(
           new vscode.SymbolInformation(
             param.name,
@@ -50,10 +50,10 @@ export class Symbol {
             method.name,
             new vscode.Location(document.document.uri, param.position)
           )
-        )
-      })
+        );
+      });
       // local variables
-      method.localVariables?.forEach(variable => {
+      method.localVariables?.forEach((variable) => {
         symbols.push(
           new vscode.SymbolInformation(
             variable.name,
@@ -61,9 +61,10 @@ export class Symbol {
             method.name,
             new vscode.Location(document.document.uri, variable.position)
           )
-        )
-      })
-    })
-    return symbols
+        );
+      });
+    });
+    return symbols;
   }
 }
+module.exports = Symbol;

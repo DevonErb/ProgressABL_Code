@@ -12,7 +12,7 @@ const {AblSchema} = require("@oe-zext/types");
 
 // provider/index.js index-provider.js
 //const { Provider } = require('./provider');
-const {Provider} = require("./provider");
+const Provider = require("./provider/index");
 
 // notification.js
 /*const {
@@ -30,14 +30,13 @@ const {
 
 //extension-config.js
 //const { ExtensionConfig } = require('./extension-config');
-const { ExtensionConfig } = require("./extension-config");
+const ExtensionConfig = require("./extension-config");
 // abl-execute/index.js
 //const { AblExecute } = require('./abl-execute');
-const { AblExecute } = require("./abl-execute");
+const AblExecute = require("./abl-execute");
 /**
  * This activates the extension
  */
-//export function activate(context) {
 exports.activate = function(context){
   //extension configuration
   new ExtensionConfig(context);
