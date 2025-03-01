@@ -1,0 +1,65 @@
+{
+    "addedOn": 10,
+    "avgRating": [
+        "fa fa-star-o",
+        "fa fa-star-o",
+        "fa fa-star-o",
+        "fa fa-star-o",
+        "fa fa-star-o"
+    ],
+    "breadcrumbsHtml": "<a href=\"https://docs-be.progress.com/bundle/openedge-abl-reference-117\">OpenEdge Development: ABL Reference</a>\n<span><i class=\"fa fa-angle-right\"></i>\n</span>\n<a href=\"https://docs-be.progress.com/bundle/openedge-abl-reference-117/page/ABL-Syntax-Reference.html\">ABL Syntax Reference</a>\n<span><i class=\"fa fa-angle-right\"></i>\n</span>\n<span class=\"active\">ABSOLUTE function</span>\n",
+    "class": "manual",
+    "created": 2879,
+    "dislikeurl": "https://docs-be.progress.com/dislike/308788",
+    "html": "<article class=\"hascomments\" data-page=\"bundle:openedge-abl-reference-117/enus/ABSOLUTE-function.html\" id=\"bundle:openedge-abl-reference-117/enus/ABSOLUTE-function.html\"><main role=\"main\"><article aria-labelledby=\"ariaid-title1\" class=\"dita\" id=\"ABSOLUTE-function\" role=\"article\">\n  <h1 class=\"title topictitle1 reference\" id=\"ariaid-title1\">ABSOLUTE function</h1>\n  \n  <div class=\"body refbody\">\n    <section class=\"section\">\n      <p class=\"p\">Returns the absolute value of a numeric value.</p>\n    </section>\n    <section class=\"section\" id=\"ABSOLUTE-function__syntax_GC152W2679255\"><h2 class=\"title sectiontitle\" id=\"d210895e96\">Syntax</h2>\n      \n      <table class=\"table frame-all\" id=\"ABSOLUTE-function__idGDE1VS2661835\"><caption></caption><colgroup><col style=\"width:100%\" /></colgroup><tbody class=\"tbody\">\n            <tr class=\"row rowsep-0\">\n              <td class=\"entry colsep-1 rowsep-1\">\n                <pre class=\"pre codeblock\"><code>ABSOLUTE ( <var class=\"keyword varname\">n</var> )</code></pre>\n              </td>\n            </tr>\n          </tbody></table>\n      <dl class=\"dl parml\">\n        \n          <dt class=\"dt pt dlterm\">\n            <var class=\"keyword varname\">n</var>\n          </dt>\n          <dd class=\"dd pd\">An integer or decimal expression. The return value is the same format\nas <var class=\"keyword varname\">n</var>. </dd>\n        \n      </dl>\n    </section>\n    <section class=\"section\" id=\"ABSOLUTE-function__example_GC152X2679264\"><h2 class=\"title sectiontitle\" id=\"d210895e143\">Example</h2>\n      \n      <p class=\"p\">This\nprocedure calculates the number of miles you drive between highway exit\nramps.</p>\n      <p class=\"p\">\n        <strong class=\"ph b\">r-abs.p</strong>\n      </p>\n      <table class=\"table frame-all\" id=\"ABSOLUTE-function__idGDE1VT2661841\"><caption></caption><colgroup><col style=\"width:100%\" /></colgroup><tbody class=\"tbody\">\n            <tr class=\"row rowsep-0\">\n              <td class=\"entry colsep-1 rowsep-1\">\n                <pre class=\"pre codeblock\"><code>DEFINE VARIABLE mark-start  AS DECIMAL NO-UNDO.\nDEFINE VARIABLE mark-finish AS DECIMAL NO-UNDO.\nDEFINE VARIABLE units       AS LOGICAL NO-UNDO FORMAT &quot;miles/kilometers&quot;.\n\nFORM\n  mark-start LABEL &quot;Mile marker for highway on-ramp&quot; SKIP\n  mark-finish LABEL &quot;Mile marker next to your exit&quot; SKIP(1)\n  units LABEL &quot;Measure in &lt;m&gt;iles or &lt;k&gt;ilometers&quot; SKIP(1)\n  WITH FRAME question SIDE-LABELS \n  TITLE &quot;This program calculates distance driven.&quot;.\n\nUPDATE mark-start mark-finish units WITH FRAME question.\n\nDISPLAY\n  &quot;You have driven&quot; <strong class=\"ph b\">ABSOLUTE(mark-start - mark-finish)</strong> units\n  WITH NO-LABELS FRAME answer.</code></pre>\n              </td>\n            </tr>\n          </tbody></table>\n    </section>\n  </div>\n<nav role=\"navigation\"><div class=\"familylinks\"><div class=\"previouslink\"><strong>Previous topic:</strong> <a class=\"link\" data-bundleid=\"openedge-abl-reference-117\" data-navpath=\"Division-operator.html\" href=\"https://docs-be.progress.com/bundle/openedge-abl-reference-117/page/Division-operator.html\">/ Division operator</a></div><div class=\"nextlink\"><strong>Next topic:</strong> <a class=\"link\" data-bundleid=\"openedge-abl-reference-117\" data-navpath=\"ACCUM-function.html\" href=\"https://docs-be.progress.com/bundle/openedge-abl-reference-117/page/ACCUM-function.html\">ACCUM function</a></div></div></nav><nav class=\"related-links\" role=\"navigation\"></nav></article></main></article>\n",
+    "isWatched": false,
+    "labelText": "Product; Product > OpenEdge; Product > OpenEdge > Version 11.7; Format; Format > Documentation",
+    "likes": 0,
+    "likeurl": "https://docs-be.progress.com/like/308788",
+    "myDocsURL": null,
+    "numOfPageViews": 0,
+    "numOfRatingsText": "<span>0 Ratings",
+    "revised": 2879,
+    "showWatch": false,
+    "topicMeta": [
+        [
+            "bookowner",
+            "oe11docs"
+        ],
+        [
+            "bookrights",
+            "oe11docs"
+        ],
+        [
+            "bundle",
+            "openedge-abl-reference-117"
+        ],
+        [
+            "data",
+            "OEInformationHub/Product"
+        ],
+        [
+            "data",
+            "OEInformationHub/Product/product_openedge"
+        ],
+        [
+            "data",
+            "OEInformationHub/Product/product_openedge/product_openedge_117"
+        ],
+        [
+            "data",
+            "OEInformationHub/format"
+        ],
+        [
+            "data",
+            "OEInformationHub/format/format_documentation"
+        ],
+        [
+            "organization",
+            "oe11docs"
+        ]
+    ],
+    "topicTitle": "ABSOLUTE function",
+    "topicurl": "https://docs-be.progress.com/bundle/openedge-abl-reference-117/page/ABSOLUTE-function.html",
+    "type": "Manual"
+}
